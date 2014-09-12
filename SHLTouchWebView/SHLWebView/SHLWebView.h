@@ -10,4 +10,6 @@
 
 @interface SHLWebView : UIWebView
 
+@property (nonatomic, setter=setDayOrNight:) BOOL isDay;
+
 @end

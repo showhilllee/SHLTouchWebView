@@ -14,6 +14,7 @@
 		A82A541B19C2E44700F1C1B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A82A541A19C2E44700F1C1B5 /* Images.xcassets */; };
 		A82A542719C2E44700F1C1B5 /* SHLTouchWebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A82A542619C2E44700F1C1B5 /* SHLTouchWebViewTests.m */; };
 		A82A543219C2E47E00F1C1B5 /* SHLWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = A82A543119C2E47E00F1C1B5 /* SHLWebView.m */; };
+		A82A543419C2F16B00F1C1B5 /* chapter01.html in Resources */ = {isa = PBXBuildFile; fileRef = A82A543319C2F16B00F1C1B5 /* chapter01.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		A82A542619C2E44700F1C1B5 /* SHLTouchWebViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHLTouchWebViewTests.m; sourceTree = "<group>"; };
 		A82A543019C2E47E00F1C1B5 /* SHLWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SHLWebView.h; path = SHLWebView/SHLWebView.h; sourceTree = "<group>"; };
 		A82A543119C2E47E00F1C1B5 /* SHLWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SHLWebView.m; path = SHLWebView/SHLWebView.m; sourceTree = "<group>"; };
+		A82A543319C2F16B00F1C1B5 /* chapter01.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = chapter01.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				A82A541719C2E44700F1C1B5 /* Main.storyboard */,
 				A82A543019C2E47E00F1C1B5 /* SHLWebView.h */,
 				A82A543119C2E47E00F1C1B5 /* SHLWebView.m */,
+				A82A543319C2F16B00F1C1B5 /* chapter01.html */,
 				A82A541A19C2E44700F1C1B5 /* Images.xcassets */,
 				A82A540D19C2E44700F1C1B5 /* Supporting Files */,
 			);
@@ -203,6 +206,7 @@
 			files = (
 				A82A541919C2E44700F1C1B5 /* Main.storyboard in Resources */,
 				A82A541B19C2E44700F1C1B5 /* Images.xcassets in Resources */,
+				A82A543419C2F16B00F1C1B5 /* chapter01.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +416,7 @@
 				A82A542C19C2E44700F1C1B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A82A542D19C2E44700F1C1B5 /* Build configuration list for PBXNativeTarget "SHLTouchWebViewTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +425,7 @@
 				A82A542F19C2E44700F1C1B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

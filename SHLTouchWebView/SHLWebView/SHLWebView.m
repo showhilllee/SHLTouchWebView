@@ -73,6 +73,7 @@ static void installHook()
 {
     if (self = [super initWithFrame:frame]) {
         installHook();
+        [self setOpaque:NO];
     }
     return self;
 }
@@ -89,6 +90,10 @@ static void installHook()
     if ([self.delegate respondsToSelector:@selector(webView:tappedWithTouch:event:)]) {
         [(NSObject*)self.delegate webView:self tappedWithTouch:touch event:event];
     }
+}
+
+- (void) setDayOrNight:(BOOL)isDay {
+    self.backgroundColor = isDay ? [UIColor whiteColor] : [UIColor grayColor];
 }
 
 /*
