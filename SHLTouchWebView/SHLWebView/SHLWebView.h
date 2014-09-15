@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHLWebView : UIWebView
+@interface SHLWebView : UIWebView 
 
+@property (nonatomic) float frontSize;
+@property (nonatomic, setter=setColor:) UIColor* color;
 @property (nonatomic, setter=setDayOrNight:) BOOL isDay;
+
+- (void) loadRequestWithURL:(NSString*)url;
+- (void) refreshFrontSize;
 
 @end

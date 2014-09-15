@@ -29,11 +29,17 @@
     path = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"chapter01.html"] ofType:nil];
     
     shlWebView = [[SHLWebView alloc] initWithFrame:self.view.bounds];
-    [shlWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:path]]];
+    [shlWebView loadRequestWithURL:path];
     [self.view addSubview:shlWebView];
     
-    //设置背景色
+    // 设置字体大小
+    shlWebView.frontSize = 25;
+    
+    // 设置背景色(默认两种，YES时显示白色背景，NO时显示灰色背景)
     shlWebView.isDay = YES;
+    
+    // 设置背景颜色
+    shlWebView.color = [UIColor cyanColor];
     
     // 1.通过WebView的代理实现
     shlWebView.delegate = self;
@@ -47,11 +53,8 @@
 
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-    //<body style="FONT-SIZE: 16px"> 默认字体大小
-    
-    //修改显示字体大小
-    NSString *jsString = [[NSString alloc] initWithFormat:@"document.body.style.fontSize=%d;",25];
-    [webView stringByEvaluatingJavaScriptFromString:jsString];
+    //刷新字体大小
+    [shlWebView refreshFrontSize];
 }
 
 - (void)webView:(UIWebView*)sender zoomingEndedWithTouches:(NSSet*)touches event:(UIEvent*)event
@@ -78,6 +81,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    shlWebView = nil;
 }
 
 @end

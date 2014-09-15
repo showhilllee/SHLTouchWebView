@@ -65,6 +65,7 @@ static void installHook()
 {
     if (self = [super initWithCoder:coder]) {
         installHook();
+        [self setOpaqueAndIsDay];
     }
     return self;
 }
@@ -73,9 +74,14 @@ static void installHook()
 {
     if (self = [super initWithFrame:frame]) {
         installHook();
-        [self setOpaque:NO];
+        [self setOpaqueAndIsDay];
     }
     return self;
+}
+
+- (void) setOpaqueAndIsDay {
+    [self setOpaque:NO];
+    self.isDay = YES;
 }
 
 - (void)fireZoomingEndedWithTouches:(NSSet*)touches event:(UIEvent*)event
@@ -94,6 +100,35 @@ static void installHook()
 
 - (void) setDayOrNight:(BOOL)isDay {
     self.backgroundColor = isDay ? [UIColor whiteColor] : [UIColor grayColor];
+}
+
+- (void) setColor:(UIColor *)color {
+    self.backgroundColor = color;
+}
+
+- (void) loadRequestWithURL:(NSString*)url {
+    
+    NSURL* currentURL = nil;
+    
+    if ([url hasPrefix:@"http://"]) {
+        currentURL = [NSURL URLWithString:url];
+    } else {
+        currentURL = [NSURL fileURLWithPath:url];
+    }
+    
+    [self loadRequest:[NSURLRequest requestWithURL:currentURL]];
+}
+
+- (void) refreshFrontSize {
+    if (self.frontSize) {
+        NSString *jsString = [NSString stringWithFormat:@"document.body.style.fontSize=%f;",self.frontSize];
+        [self stringByEvaluatingJavaScriptFromString:jsString];
+    }
+}
+
+- (void) changeSize:(float)value {
+    NSString* str1 =[NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%f%%'",value];
+    [self stringByEvaluatingJavaScriptFromString:str1];
 }
 
 /*
